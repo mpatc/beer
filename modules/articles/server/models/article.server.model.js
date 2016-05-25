@@ -16,9 +16,8 @@ var ArticleSchema = new Schema({
   },
   title: {
     type: String,
-    default: '',
+    default: 'This beer has not been reviewed',
     trim: true,
-    required: 'Title cannot be blank'
   },
   name: {
     type: String,
@@ -27,7 +26,7 @@ var ArticleSchema = new Schema({
   },
   rating: {
     type: String,
-    default: '',
+    default: 'This beer has not been rated',
     trim: true
   },
   sampled: {
@@ -36,7 +35,7 @@ var ArticleSchema = new Schema({
   },
   content: {
     type: String,
-    default: '',
+    default: 'This beer has not been reviewed',
     trim: true
   },
   user: {

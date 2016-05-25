@@ -31,10 +31,10 @@
         </div>
         <div ng-show="sampled" class="form-group" show-errors>
           <label for="title">Review Title</label>
-          <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
-          <div ng-messages="articleForm.title.$error" role="alert">
+          <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title">
+          <!-- <div ng-messages="articleForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article title is required.</p>
-          </div>
+          </div> -->
         </div>
         <div class="form-group" ng-show="sampled" show-errors>
           <div class="radio">
@@ -92,10 +92,10 @@
         </div>
         <div style="display:none;" class="form-group" show-errors>
           <label for="rating">Review rating</label>
-          <input name="rating" type="text" string-to-number ng-model="rating" id="rating" class="form-control" placeholder="1" step="1" min="1" max="10" required>
-          <div ng-messages="articleForm.rating.$error" role="alert">
+          <input name="rating" type="text" string-to-number ng-model="rating" id="rating" class="form-control" placeholder="1" step="1" min="1" max="10">
+          <!-- <div ng-messages="articleForm.rating.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article rating is required.</p>
-          </div>
+          </div> -->
         </div>
         <div style="display:none;" class="form-group" show-errors>
           <label for="name">Beer Name</label>
