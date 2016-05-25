@@ -39,7 +39,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       $scope.error = null;
       for (var i = 0; i < $scope.list.length; i++) { // this checks if beer has already been added
         if ($scope.list[i].name === $scope.beers.name) {
-          alert('you already reviewed that beer');
+          alert('you already reviewed that beer click ok to reload');
           location.reload(); // if it has been reviewed, reload the page to offer new beer
         }
       }

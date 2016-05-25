@@ -10,8 +10,9 @@
         by
         <span ng-bind="article.user.displayName"></span>
       </small>
+      <h2>Beer Name:  {{article.name}}</h2>
       <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
-      <h3>Rating on a scale from 1 to 10: {{article.rating}}</h3>
+      <h3>Rating on a scale from 1 to 10: <br> {{article.rating}}</h3>
       <p class="list-group-item-text" ng-bind="article.content"></p>
     </a>
   </div>
