@@ -20,7 +20,7 @@
     <form name="articleForm" class="form-horizontal" ng-submit="create(articleForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label for="title">Title</label>
+          <label for="title">Review Title</label>
           <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
           <div ng-messages="articleForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article title is required.</p>
@@ -29,29 +29,42 @@
         <div class="form-group" show-errors>
           <div class="radio">
             <label>
-              <input type="radio" name="optradio">
+              <input type="radio" ng-model="rating" value="1" name="optradio">
               <span class="glyphicon glyphicon-star"></span>1 star</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optradio"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>2 star</label>
+              <input type="radio" ng-model="rating" value="2" name="optradio"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>2</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optradio"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>3 star</label>
+              <input type="radio" ng-model="rating" value="3" name="optradio"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>3</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optradio">
-              <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>4 star</label>
+              <input type="radio" ng-model="rating" value="4" name="optradio">
+              <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>4</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optradio">
-              <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>5 star</label>
+              <input type="radio" ng-model="rating" value="5" name="optradio">
+              <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>5</label>
           </div>
         </div>
-
+        <div class="form-group" show-errors>
+          <label for="title">Review rating</label>
+          <input name="rating" type="number" ng-model="rating" id="rating" class="form-control" placeholder="1" step="1" min="1" max="5" required>
+          <div ng-messages="articleForm.rating.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Article rating is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="title">Beer Name</label>
+          <input name="title" type="text" ng-model="name" id="title" class="form-control" placeholder="name" required>
+          <div ng-messages="articleForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Beer name is required.</p>
+          </div>
+        </div>
         <div class="form-group">
           <label for="content">Content</label>
           <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
