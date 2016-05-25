@@ -1,8 +1,8 @@
 'use strict';
 
 // Setting up route
-angular.module('articles').config(['$stateProvider',
-  function ($stateProvider) {
+angular.module('articles').config(['$stateProvider', '$httpProvider',
+  function ($stateProvider, $httpProvider) {
     // Articles state routing
     $stateProvider
       .state('articles', {
@@ -32,5 +32,8 @@ angular.module('articles').config(['$stateProvider',
           roles: ['user', 'admin']
         }
       });
+
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
   }
 ]);

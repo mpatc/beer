@@ -5,8 +5,20 @@
  */
 var path = require('path'),
   mongoose = require('mongoose'),
+  BreweryDb = require('brewerydb-node'),
+  brewdb = new BreweryDb('0cb9881da5081cf5060b13ba2e30bd69'),
   Article = mongoose.model('Article'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+
+
+
+// exports.search = function (req, res) {
+//   var beersearch =
+//
+// }
+//
+
+
 
 /**
  * Create a article
@@ -84,6 +96,9 @@ exports.list = function (req, res) {
     }
   });
 };
+
+
+
 
 /**
  * Article middleware
