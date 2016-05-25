@@ -19,6 +19,11 @@
   <div class="col-md-12">
     <form name="articleForm" class="form-horizontal" ng-submit="create(articleForm.$valid)" novalidate>
       <fieldset>
+        <div class="form-group">
+          <label for="sampled">
+          Sampled?
+        </label> <input type="checkbox" id="sampled" name="sampled" ng-model="sampled">
+        </div>
         <div class="form-group" show-errors>
           <label for="title">Review Title</label>
           <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>

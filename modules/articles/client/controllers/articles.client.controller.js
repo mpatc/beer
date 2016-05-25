@@ -54,6 +54,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       var article = new Articles({
         title: this.title,
         name: beername,
+        sampled: this.sampled,
         rating: this.rating,
         content: this.content
 

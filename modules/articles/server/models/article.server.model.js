@@ -30,6 +30,10 @@ var ArticleSchema = new Schema({
     default: '',
     trim: true
   },
+  sampled: {
+    type: Boolean,
+    default: false
+  },
   content: {
     type: String,
     default: '',
