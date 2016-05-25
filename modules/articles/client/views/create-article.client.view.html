@@ -8,8 +8,13 @@
       </h3>
       <!-- <h4 class="list-group-item-heading"><img src="{{beers.lables.icon}}" alt=""></h4> -->
       <p class="list-group-item-text">Desc. {{desc}}</p>
-      <p class="list-group-item-text">abv. {{beers.abv}}</p>
-      <p class="list-group-item-text">ibu. {{beers.ibu}}</p>
+      <p ng-show="beers.abv" class="list-group-item-text">This beer has an abv. of: {{beers.abv}}</p>
+      <p ng-show="beers.ibu" class="list-group-item-text">This beer has an ibu. of: {{beers.ibu}}</p>
+      <p ng-show="beers.isOrganic" class="list-group-item-text">This beer is Organic? (Y/N): {{beers.isOrganic}}</p>
+      <!--<p ng-show="beers.ibu"class="list-group-item-text">ibu. {{beers.ibu}}</p>
+      <p ng-show="beers.ibu"class="list-group-item-text">ibu. {{beers.ibu}}</p>
+      <p ng-show="beers.ibu"class="list-group-item-text">ibu. {{beers.ibu}}</p> -->
+
       <!-- <p class="list-group-item-text">ibu. {{beers.ibu}}</p> -->
       <!-- <p class="list-group-item-text">style. {{beers.style}}</p> -->
 
@@ -24,14 +29,14 @@
           Sampled?
         </label> <input type="checkbox" id="sampled" name="sampled" ng-model="sampled">
         </div>
-        <div class="form-group" show-errors>
+        <div ng-show="sampled" class="form-group" show-errors>
           <label for="title">Review Title</label>
           <input name="title" type="text" ng-model="title" id="title" class="form-control" placeholder="Title" required>
           <div ng-messages="articleForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article title is required.</p>
           </div>
         </div>
-        <div class="form-group" show-errors>
+        <div class="form-group" ng-show="sampled" show-errors>
           <div class="radio">
             <label>
               <input type="radio" ng-model="rating" value="1" name="optradio">
@@ -99,11 +104,17 @@
             <p class="help-block error-text" ng-message="required">Beer name is required.</p>
           </div>
         </div>
-        <div class="form-group">
+        <div ng-show="sampled" class="form-group">
           <label for="content">Content</label>
           <textarea name="content" ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
         </div>
-        <div class="form-group">
+        <div ng-show="sampled" class="form-group">
+          <label for="submit">Save Review</label>
+          <input type="submit" class="btn btn-default">
+
+        </div>
+        <div ng-hide="sampled" class="form-group">
+          <label for="submit">Add new, unsampled Beer to DB</label>
           <input type="submit" class="btn btn-default">
         </div>
         <div ng-show="error" class="text-danger">
