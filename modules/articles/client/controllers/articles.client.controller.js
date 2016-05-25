@@ -8,6 +8,15 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
   success(function(data, status, headers, config) {
     console.log('beerData: ', data.data);
 
+    if (!data.data.description) {
+      if(!data.data.style.description) {
+        $scope.desc = 'no description avaliable';
+      }
+      $scope.desc = data.data.style.description;
+    } else {
+      $scope.desc = data.data.description;
+    }
+
     $scope.beers = data.data;
   }).
   error(function(data, status, headers, config) {
