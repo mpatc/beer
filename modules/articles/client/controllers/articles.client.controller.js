@@ -37,7 +37,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     // Create new Article
     $scope.create = function (isValid) {
       $scope.error = null;
-      for (var i = 0; i < $scope.list.length; i++) { // this checks if beer has already been reviewed
+      for (var i = 0; i < $scope.list.length; i++) { // this checks if beer has already been added
         if ($scope.list[i].name === $scope.beers.name) {
           alert('you already reviewed that beer');
           location.reload(); // if it has been reviewed, reload the page to offer new beer
@@ -50,6 +50,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         return false;
       }
       var beername = $scope.beers.name;
+      if ($scope.beers.sampled === false) {
+        $scope.beers.title = 'Not Sampled';
+        $scope.beers.rating = 'No rating yet';
+        $scope.beers.content = 'Not reviewed yet';
+      }
       // Create new Article object
       var article = new Articles({
         title: this.title,
