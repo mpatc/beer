@@ -17,7 +17,7 @@
           Sampled?
         </label> <input type="checkbox" id="sampled" name="sampled" ng-model="article.sampled">
         </div>
-        <!-- <div class="form-group" ng-show="article.sampled" show-errors>
+        <div class="form-group" ng-show="article.sampled" show-errors>
           <div class="radio">
             <label>
               <input type="radio" ng-model="article.rating" value="1" name="rating">
@@ -70,24 +70,24 @@
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>10</label>
           </div>
-        </div> -->
-        <!-- <div ng-show="article.sampled" class="form-group" show-errors>
+        </div>
+        <div style="display:none;" class="form-group" show-errors>
           <label for="rating">Review rating from 1-10</label>
           <input name="rating" type="text" ng-model="article.rating" id="rating" class="form-control">
           <div ng-messages="articleForm.rating.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article rating is required.</p>
           </div>
-        </div> -->
+        </div>
 
 
         <div ng-show="article.sampled" class="form-group">
           <label for="content">Full Review</label>
           <textarea name="content" ng-model="article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
         </div>
-        <div ng-show="article.sampled" class="form-group">
+        <!-- <div ng-show="article.sampled" class="form-group">
           <label for="rating">rating from 1-10</label>
           <textarea name="rating" ng-model="article.rating" id="rating" class="form-control" placeholder="Content"></textarea>
-        </div>
+        </div> -->
         <div class="form-group">
           <input type="submit" value="Update" class="btn btn-default">
         </div>
