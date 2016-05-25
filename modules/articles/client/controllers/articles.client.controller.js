@@ -107,6 +107,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
       }
 
       var article = $scope.article;
+      if (article.sampled === false) {
+        article.title = 'Not Sampled';
+        article.rating = 'No rating yet';
+        article.content = 'Not reviewed yet';
+      }
 
       article.$update(function () {
         $location.path('articles/' + article._id);

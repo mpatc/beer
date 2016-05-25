@@ -17,70 +17,76 @@
           Sampled?
         </label> <input type="checkbox" id="sampled" name="sampled" ng-model="article.sampled">
         </div>
-        <div class="form-group" ng-show="article.sampled" show-errors>
+        <!-- <div class="form-group" ng-show="article.sampled" show-errors>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="1" name="optradio">
+              <input type="radio" ng-model="article.rating" value="1" name="rating">
               <span class="glyphicon glyphicon-star"></span>1 star</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="2" name="optradio"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>2</label>
+              <input type="radio" ng-model="article.rating" value="2" name="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>2</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="3" name="optradio"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>3</label>
+              <input type="radio" ng-model="article.rating" value="3" name="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>3</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="4" name="optradio">
+              <input type="radio" ng-model="article.rating" value="4" name="rating">
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>4</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="5" name="optradio">
+              <input type="radio" ng-model="article.rating" value="5" name="rating">
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>5</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="6" name="optradio">
+              <input type="radio" ng-model="article.rating" value="6" name="rating">
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>6</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="7" name="optradio">
+              <input type="radio" ng-model="article.rating" value="7" name="rating">
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>7</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="8" name="optradio">
+              <input type="radio" ng-model="article.rating" value="8" name="rating">
               <span class="glyphicon glyphicon-star">
 
               </span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>8</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="9" name="optradio">
+              <input type="radio" ng-model="article.rating" value="9" name="rating">
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>9</label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" ng-model="article.rating" value="10" name="optradio">
+              <input type="radio" ng-model="article.rating" value="10" name="rating">
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>
               <span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span>10</label>
           </div>
-        </div>
-        <div style="display:none;" class="form-group" show-errors>
+        </div> -->
+        <!-- <div ng-show="article.sampled" class="form-group" show-errors>
           <label for="rating">Review rating from 1-10</label>
           <input name="rating" type="text" ng-model="article.rating" id="rating" class="form-control">
-          <!-- <div ng-messages="articleForm.rating.$error" role="alert">
+          <div ng-messages="articleForm.rating.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article rating is required.</p>
-          </div> -->
-        </div>
+          </div>
+        </div> -->
+
+
         <div ng-show="article.sampled" class="form-group">
           <label for="content">Full Review</label>
           <textarea name="content" ng-model="article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        </div>
+        <div ng-show="article.sampled" class="form-group">
+          <label for="rating">rating from 1-10</label>
+          <textarea name="rating" ng-model="article.rating" id="rating" class="form-control" placeholder="Content"></textarea>
         </div>
         <div class="form-group">
           <input type="submit" value="Update" class="btn btn-default">
