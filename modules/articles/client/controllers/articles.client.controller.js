@@ -50,11 +50,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         return false;
       }
       var beername = $scope.beers.name;
-      if ($scope.article.sampled === false) {
-        $scope.article.title = 'Not Sampled';
-        $scope.article.rating = 'No rating yet';
-        $scope.article.content = 'Not reviewed yet';
-      }
+
       // Create new Article object
       var article = new Articles({
         title: this.title,
@@ -64,6 +60,12 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         content: this.content
 
       });
+      // console.log('article to be saved: ', article)
+      // if (article.sampled === false) {
+      //   article.title = 'Not Sampled';
+      //   article.rating = 'No rating yet';
+      //   article.content = 'Not reviewed yet';
+      // }
 
       // Redirect after save
       article.$save(function (response) {
