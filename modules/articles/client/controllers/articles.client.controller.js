@@ -105,11 +105,6 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
         return false;
       }
-      if ($scope.article.sampled === false) {
-        $scope.article.title = 'Not Sampled';
-        $scope.article.rating = 'No rating yet';
-        $scope.article.content = 'Not reviewed yet';
-      }
 
       var article = $scope.article;
 

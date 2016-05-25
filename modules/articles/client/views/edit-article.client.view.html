@@ -6,7 +6,7 @@
     <form name="articleForm" class="form-horizontal" ng-submit="update(articleForm.$valid)" novalidate>
       <fieldset>
         <div ng-show="article.sampled" class="form-group" show-errors>
-          <label for="title">Title</label>
+          <label for="title">Review Headline</label>
           <input name="title" type="text" ng-model="article.title" id="title" class="form-control" placeholder="Title" required>
           <div ng-messages="articleForm.title.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article title is required.</p>
@@ -16,11 +16,6 @@
           <label for="sampled">
           Sampled?
         </label> <input type="checkbox" id="sampled" name="sampled" ng-model="article.sampled">
-        </div>
-
-        <div ng-show="article.sampled" class="form-group">
-          <label for="content">Content</label>
-          <textarea name="content" ng-model="article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
         </div>
         <div class="form-group" ng-show="article.sampled" show-errors>
           <div class="radio">
@@ -82,6 +77,10 @@
           <!-- <div ng-messages="articleForm.rating.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Article rating is required.</p>
           </div> -->
+        </div>
+        <div ng-show="article.sampled" class="form-group">
+          <label for="content">Full Review</label>
+          <textarea name="content" ng-model="article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
         </div>
         <div class="form-group">
           <input type="submit" value="Update" class="btn btn-default">
