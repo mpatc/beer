@@ -6,6 +6,15 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
     $http.get('http://cors.io/?u=http://api.brewerydb.com/v2/beer/random?key=0cb9881da5081cf5060b13ba2e30bd69').
   success(function(data, status, headers, config) {
+
+
+    $scope.list = Articles.query();
+    $scope.list.$promise.then(function (res){
+      console.log('art. list:', res);
+      $scope.list = res;
+    });
+    console.log('art. list:', $scope.list);
+
     console.log('beerData: ', data.data);
 
     if (!data.data.description) {
@@ -28,6 +37,12 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     // Create new Article
     $scope.create = function (isValid) {
       $scope.error = null;
+      for (var i = 0; i < $scope.list.length; i++) { // this checks if beer has already been reviewed
+        if ($scope.list[i].name === $scope.beers.name) {
+          alert('you already reviewed that beer');
+          location.reload(); // if it has been reviewed, reload the page to offer new beer
+        }
+      }
 
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'articleForm');
