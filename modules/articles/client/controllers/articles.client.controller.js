@@ -50,10 +50,10 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         return false;
       }
       var beername = $scope.beers.name;
-      if ($scope.beers.sampled === false) {
-        $scope.beers.title = 'Not Sampled';
-        $scope.beers.rating = 'No rating yet';
-        $scope.beers.content = 'Not reviewed yet';
+      if ($scope.article.sampled === false) {
+        $scope.article.title = 'Not Sampled';
+        $scope.article.rating = 'No rating yet';
+        $scope.article.content = 'Not reviewed yet';
       }
       // Create new Article object
       var article = new Articles({
@@ -102,6 +102,11 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
         $scope.$broadcast('show-errors-check-validity', 'articleForm');
 
         return false;
+      }
+      if ($scope.article.sampled === false) {
+        $scope.article.title = 'Not Sampled';
+        $scope.article.rating = 'No rating yet';
+        $scope.article.content = 'Not reviewed yet';
       }
 
       var article = $scope.article;
