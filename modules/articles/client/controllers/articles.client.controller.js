@@ -6,8 +6,9 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
     $http.get('http://cors.io/?u=http://api.brewerydb.com/v2/beer/random?key=0cb9881da5081cf5060b13ba2e30bd69').
   success(function(data, status, headers, config) {
-    console.log('beerData: ', data);
-    $scope.beers = data;
+    console.log('beerData: ', data.data);
+
+    $scope.beers = data.data;
   }).
   error(function(data, status, headers, config) {
     // log error
