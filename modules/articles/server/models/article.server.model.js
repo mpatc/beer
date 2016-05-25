@@ -26,7 +26,7 @@ var ArticleSchema = new Schema({
     trim: true
   },
   rating: {
-    type: Number,
+    type: String,
     default: '',
     trim: true
   },

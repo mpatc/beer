@@ -1,22 +1,6 @@
 <section ng-controller="ArticlesController" ng-init="find()">
   <div class="page-header">
-    <h1>Random Beer</h1>
-  </div>
-
-  <div class="list-group">
-    <a ui-sref="articles.view({articleId: article._id})" class="list-group-item">
-      <h3 class="list-group-item-text">
-        Beer Name
-        <span ng-bind="beers.name"></span>
-      </h3>
-      <!-- <h4 class="list-group-item-heading"><img src="{{beers.lables.icon}}" alt=""></h4> -->
-      <p class="list-group-item-text">Desc. {{desc}}</p>
-      <p class="list-group-item-text">abv. {{beers.abv}}</p>
-      <p class="list-group-item-text">ibu. {{beers.ibu}}</p>
-      <!-- <p class="list-group-item-text">ibu. {{beers.ibu}}</p> -->
-      <!-- <p class="list-group-item-text">style. {{beers.style}}</p> -->
-
-    </a>
+    <h1>Random Beers Reviewed</h1>
   </div>
   <div class="list-group">
     <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">

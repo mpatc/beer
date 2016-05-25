@@ -34,11 +34,14 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
         return false;
       }
-
+      var beername = $scope.beers.name;
       // Create new Article object
       var article = new Articles({
         title: this.title,
+        name: beername,
+        rating: this.rating,
         content: this.content
+
       });
 
       // Redirect after save
@@ -92,7 +95,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     // Find a list of Articles
     $scope.find = function () {
       $scope.articles = Articles.query();
-      console.log("list of arts: ", $scope.articles);
+      console.log('list of arts: ', $scope.articles);
     };
 
     // Find existing Article
